@@ -87,8 +87,8 @@ export function extractHandFeatures(landmarks: HandLandmark['landmarks']): {
   const palmX = landmarks[9].x - landmarks[0].x;
   const palmY = landmarks[9].y - landmarks[0].y;
   const palmDirection = Math.abs(palmX) > Math.abs(palmY)
-    ? (palmX > 0 ? 'right' : 'left') as const
-    : (palmY > 0 ? 'down' : 'up') as const;
+    ? (palmX > 0 ? 'right' as const : 'left' as const)
+    : (palmY > 0 ? 'down' as const : 'up' as const);
 
   // Wrist angle
   const dx = landmarks[9].x - landmarks[0].x;
